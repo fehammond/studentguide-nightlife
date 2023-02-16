@@ -1,0 +1,822 @@
+
+/* typography styles for the standard column of content, other classes may have typography ajusted further down CSS */
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* text was slightly crowded, this adjustment spaces things out, more aesthetically pleasing */
+    line-height: 150%;
+}
+
+.editable-text img {
+    margin: 1rem 0;
+}
+
+.editable-text h2 {
+    font-family: 'EB Garamond', serif;
+    margin: 0;
+    padding: 1rem 0 0.35rem 0;
+    color:#003b49;
+}
+
+.editable-text h3 {
+    font-family: 'EB Garamond', serif;
+    margin: 0;
+    padding: 1rem 0 0.35rem 0;
+    color: #182C3A;
+}
+
+.editable-text p {
+    margin: 0;
+    padding: 0 0 1rem 0;
+    color: #615159;
+}
+
+/* applied a natural box layout model to all elements, but allowing components to change */
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* this makes big images fit their container */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.logo-and-nav {
+    top: 0;
+    width: 100%;
+}
+
+.logo-and-nav__logo {
+    background-image: url(../img/logolarge.png);
+    background-position: 20px center;
+    padding: 20px;
+    padding-left: 90px;
+    background-repeat: no-repeat;
+    background-color: #f2c75c81;
+    background-size: contain;
+    text-indent: -8000em;
+    /*text indent removes text in top left corner behind logo */
+    margin: 0;
+    color: #615159;
+    text-transform: uppercase;
+}
+
+.logo-and-nav__links {
+    background: #f5c651b4;
+    font-size: 1.2rem;
+    padding: 20px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+/* ensures media is presentable at mobile view */
+@media screen and (min-width: 700px) {
+    .logo-and-nav__links {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.logo-and-nav__links li {
+    flex: 1;
+    display: flex;
+    border-right: 1px solid #f5c34593;
+    justify-content: center;
+}
+
+.logo-and-nav__links a {
+    display: block;
+    color: #003b49;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.logo-and-nav__links a:hover {
+    transform: scale(1.1);
+}
+
+/* main header style */
+
+.big-header {
+    background-color: #000000;
+    min-height: 80vh;
+    /* made this bigger as the nav is taller */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../img/deejayspinninglarge.jpg);
+    /* photo by authorisation of Robbie Bloomer (High Hoops) */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.big-header__content {
+    font-family: 'EB Garamond', serif;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.big-header__content a {
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 0.3rem;
+    background: #FFFFFF;
+    margin-top: 1rem;
+    color: #615159;
+    text-shadow: none;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.big-header__content a:hover {
+    background-color: #0000005b;
+    background-blend-mode: multiply;
+    color: #ffffff;
+}
+
+/* standard header style */
+
+.standard-header__content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.standard-header__content h1 {
+    font-family: 'EB Garamond', serif;
+    color: #003b49;
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 2.5rem;
+}
+
+.standard-header__content p {
+    color: #182C3A;
+    margin: 0;
+    padding: 0.5rem 0 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* content-column code */
+
+.content-column {
+    padding: 40px 20px;
+}
+
+.content-column__content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* end .content-column code */
+
+
+/* city nightlife click cards */
+.full-click-cards__cn {
+    padding: 10px;
+}
+
+.card-container__cn {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* ensures media is presentable at mobile view */
+@media screen and (min-width: 700px) {
+    .card-container__cn {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.fc-card__cn {
+    flex: 0 0 32%;
+    background: #eee;
+    margin-right: 1%;
+    margin-bottom: 1rem;
+}
+
+.fc-card__cn h2 {
+    font-family: 'EB Garamond', serif;
+}
+
+.fc-card__cn * {
+    margin: 0;
+    padding: 0;
+}
+
+.fc-card__cn a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px 30px;
+    width: 100%;
+    min-height: 30vh;
+    overflow: hidden;
+    color: #ffffff;
+    text-decoration: none;
+    /* cuts off extra content */
+    transition: transform 0.2s ease;
+}
+
+.fc-card__cn a:hover {
+    transform: scale(1.1);
+}
+
+.fc-card__cn.style-1 {
+    background-image: url(../img/venues.jpg);
+    /* image credit https://unsplash.com/photos/1jZbU_XuyvU */
+    background-color: rgba(44, 39, 39, 0.699);
+    background-blend-mode: multiply;
+}
+
+.fc-card__cn.style-2 {
+    background-image: url(../img/gallery.jpg);
+    /* image credit https://unsplash.com/photos/zH1dJAowJuc https://unsplash.com/photos/dEHSKRLg_ts */
+    background-color: rgba(44, 39, 39, 0.699);
+    background-blend-mode: multiply;
+}
+
+.fc-card__cn.style-3 {
+    background-image: url(../img/nightlifevid.jpg);
+    /* image credit https://unsplash.com/photos/JNuKyKXLh8U */
+    background-color: rgba(44, 39, 39, 0.699);
+    background-blend-mode: multiply;
+}
+
+.fc-card__cn.style-4 {
+    background-image: url(../img/maps.jpg);
+    /* image credit https://unsplash.com/photos/AFB6S2kibuk */
+    background-color: rgba(44, 39, 39, 0.699);
+    background-blend-mode: multiply;
+}
+
+.fc-card__cn.style-5 {
+    background-image: url(../img/vinyl.jpg);
+    /* image credit https://unsplash.com/photos/dZOFaMG-0Q0 */
+    background-color: rgba(44, 39, 39, 0.699);
+    background-blend-mode: multiply;
+}
+
+/* good to know click cards */
+
+.full-click-cards__gk {
+    padding: 10px;
+}
+
+.card-container__gk {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* ensures media is presentable at mobile view */
+@media screen and (min-width: 700px) {
+    .card-container__gk {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.fc-card__gk {
+    flex: 0 0 32%;
+    background: #eee;
+    margin-right: 1%;
+    margin-bottom: 1rem;
+}
+
+.fc-card__gk h2 {
+    font-family: 'EB Garamond', serif;
+}
+
+.fc-card__gk * {
+    margin: 0;
+    padding: 0;
+}
+
+.fc-card__gk a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px 30px;
+    width: 100%;
+    min-height: 30vh;
+    overflow: hidden;
+    color: #ffffff;
+    text-decoration: none;
+    /* cuts off extra content */
+    transition: transform 0.2s ease;
+}
+
+.fc-card__gk a:hover {
+    transform: scale(1.1);
+}
+
+.fc-card__gk.style-1 {
+    background-image: url(../img/discount.jpg);
+    /* image credit https://unsplash.com/photos/Wt33T42JNCM */
+    background-color: rgba(44, 39, 39, 0.699);
+    background-blend-mode: multiply;
+}
+
+.fc-card__gk.style-2 {
+    background-image: url(../img/safety.jpg);
+    /* image credit https://unsplash.com/photos/3mjspmQDM_M */
+    background-color: rgba(44, 39, 39, 0.699);
+    background-blend-mode: multiply;
+}
+
+.fc-card__gk.style-3 {
+    background-image: url(../img/eateries.jpg);
+    /* image credit https://unsplash.com/photos/I8Ag046kfqc */
+    background-color: rgba(44, 39, 39, 0.699);
+    background-blend-mode: multiply;
+}
+
+.fc-card__gk.style-4 {
+    background-image: url(../img/eventrecc.jpg);
+    /* image credit https://unsplash.com/photos/w423NnHFjFg */
+    background-color: rgba(44, 39, 39, 0.699);
+    background-blend-mode: multiply;
+}
+
+.fc-card__gk.style-5 {
+    background-image: url(../img/artistrecc.jpg);
+    /* image credit https://unsplash.com/photos/2gpfqhEFVZ8 */
+    background-color: rgba(44, 39, 39, 0.699);
+    background-blend-mode: multiply;
+}
+
+/* image gallery click cards */
+
+.full-click-cards__img {
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.card-container__img {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* ensures media is presentable at mobile view */
+@media screen and (min-width: 700px) {
+    .card-container__img {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.fc-card__img {
+    flex: 0 0 32%;
+    background-color: #ffffff;
+    margin-right: 1%;
+    margin-bottom: 1rem;
+    background-size: cover;
+    background-blend-mode: multiply;
+    transition: all 0.2s ease;
+}
+
+.fc-card__img h2 {
+    font-family: 'EB Garamond', serif;
+}
+
+.fc-card__img:hover {
+    background-color: rgb(255, 255, 255);
+
+}
+
+.fc-card__img * {
+    margin: 0;
+    padding: 0;
+}
+
+.fc-card__img a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px 50px;
+    width: 100%;
+    min-height: 30vh;
+    overflow: hidden;
+    color: rgb(0, 0, 0);
+    text-shadow: 0.5px 0.5px 5px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    font-size: 1.5rem;
+
+}
+
+.fc-card__img h2 {
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.fc-card__img a:hover {
+    transform: scale(1.1);
+}
+
+/* upcoming events click cards */
+
+.full-click-cards__events {
+    padding: 10px;
+}
+
+.card-container__events {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* ensures media is presentable at mobile view */
+@media screen and (min-width: 700px) {
+    .card-container__events {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.fc-card__events {
+    flex: 0 0 32%;
+    background: #eee;
+    margin-right: 1%;
+    margin-bottom: 1rem;
+}
+
+.fc-card__events h2 {
+    font-family: 'EB Garamond', serif;
+}
+
+.fc-card__events * {
+    margin: 0;
+    padding: 0;
+}
+
+.fc-card__events a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px 10px;
+    width: 100%;
+    min-height: 40vh;
+    overflow: hidden;
+    color: #ffffff;
+    text-decoration: none;
+    /* cuts off extra content */
+    transition: transform 0.2s ease;
+    text-align: center;
+}
+
+.fc-card__events a:hover {
+    transform: scale(1.1);
+}
+
+.fc-card__events.style-1 {
+    background-color: #003b49;
+}
+
+.fc-card__events.style-2 {
+    background-color: #003b49;
+}
+
+.fc-card__events.style-3 {
+    background-color: #003b49;
+}
+
+/* support page click cards*/
+
+.full-click-cards__support {
+    padding: 10px;
+}
+
+.card-container__support {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* ensures media is presentable at mobile view */
+@media screen and (min-width: 700px) {
+    .card-container__support {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.fc-card__support {
+    flex: 0 0 24%;
+    background: #eee;
+    margin-right: 1%;
+    margin-bottom: 1rem;
+}
+
+.fc-card__support h2 {
+    font-family: 'EB Garamond', serif;
+    color: #ffffff;
+}
+
+.fc-card__support * {
+    margin: 0;
+    padding: 0;
+}
+
+.fc-card__support a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px 30px;
+    width: 100%;
+    min-height: 30vh;
+    overflow: hidden;
+    text-decoration: none;
+    /* cuts off extra content */
+    transition: transform 0.2s ease;
+}
+
+.fc-card__support a:hover {
+    transform: scale(1.1);
+}
+
+.fc-card__support.style-1 {
+    background-image: url(../img/question.jpg);
+    background-color: rgba(44, 39, 39, 0.699);
+    background-blend-mode: multiply;
+}
+
+.fc-card__support.style-2 {
+    background-image: url(../img/chitchat.jpg);
+    background-color: rgba(44, 39, 39, 0.699);
+    background-blend-mode: multiply;
+}
+
+/* image to side of text style */
+
+.text-image__container {
+    max-width: 1280px;
+    margin: 3rem auto;
+    padding: 1rem;
+}
+
+/* ensures media is presentable at mobile view */
+
+/* ensures text remains beside image */
+@media screen and (min-width:700px) {
+    .text-image__container {
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* ensures image remains correct size next to text */
+@media screen and (min-width:700px) {
+    .text-image__text {
+        flex: 1;
+    }
+
+    .left .text-image__text {
+        order: 1;
+    }
+
+    .text-image__text,
+    .left .text-image__text {
+        padding: 0 2rem;
+    }
+}
+
+.text-image__content {
+    flex: 1;
+}
+
+.text-image__content h2 {
+    font-family: 'EB Garamond', serif;
+}
+
+/* link buttons under image with text to side */
+.text-image__content a {
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 0.3rem;
+    background: #003b49;
+    margin-top: 1rem;
+    color: #f2c75c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* more obvious to user they are hovering on a link */
+.text-image__content a:hover {
+    opacity: 0.7;
+}
+
+/* contact page grid styles */
+
+.grid-1 {
+    padding: 10px;
+    /*border: 5px solid green;*/
+}
+
+.grid-1 .item-1 h3 {
+    font-family: 'EB Garamond', serif;
+    margin: 0;
+    padding: 1rem 0 0.35rem 0;
+    color: #182C3A;
+}
+
+.grid-1 .item-2 h3 {
+    font-family: 'EB Garamond', serif;
+    margin: 0;
+    padding: 1rem 0 0.35rem 0;
+    color: #182C3A;
+}
+
+.grid-1 .item-3__social-media h3 {
+    font-family: 'EB Garamond', serif;
+    margin: 0;
+    padding: 1rem 0 0.35rem 0;
+    color: #182C3A;
+}
+
+.grid-1 .item-4 h3 {
+    font-family: 'EB Garamond', serif;
+    margin: 0;
+    padding: 1rem 0 0.35rem 0;
+    color: #182C3A;
+}
+
+.grid-1 p {
+    margin: 0;
+    padding: 0 0 1rem 0;
+    color: #615159;
+}
+
+/* changes the display of the social media to a horizontal list for all screen sizes */
+.item-3__social-media ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    /*border: 1px solid green;*/
+}
+
+.item-3__social-media ul li {
+    flex: 1;
+}
+
+/* ensures media is presentable at mobile view */
+@media screen and (min-width: 750px) {
+    .grid-1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .grid-1 {
+        /*border: 5px solid red;*/
+        display: grid;
+        grid-template-columns: 300px 300px;
+        grid-template-rows: auto auto;
+        grid-gap: 50px 200px;
+    }
+
+}
+
+.grid-1 .item-3__social-media li {
+    display: flex;
+    list-style-type: none;
+    padding: 0 1rem;
+}
+
+.grid-1 .item-3__social-media li {
+    padding: 10px;
+    font-size: 15px;
+    width: 35px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+/* style for team profiles */
+
+.media img {
+    border-radius: 50%;
+    max-width: 100px;
+}
+
+/* ensures media is presentable at mobile view */
+@media screen and (min-width: 700px) {
+    .media {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .media img {
+        margin-right: 2rem;
+    }
+
+    .team__profiles h3 {
+        margin-top: 0;
+    }
+}
+
+/* footer section for entire site */
+
+.page-footer {
+    background: #f2c75c81;
+    min-height: 20vh;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #003b49;
+}
+
+.page-footer a {
+    color: #003b49;
+}
+
+/* more obvious to user they are hovering on a link */
+.page-footer a:hover {
+    color: red;
+}
+
+.page-footer .social-media {
+    display: flex;
+    list-style-type: none;
+}
+
+.page-footer .social-media li {
+    padding: 0 1rem;
+}
+
+.page-footer .social-media a {
+    color: #ffffff;
+}
+
+/* font awesome social media buttons from W3Schools https://www.w3schools.com/howto/howto_css_social_media_buttons.asp */
+
+/* social media button style */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 55px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+/* Instagram */
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+
+/* footer section end */
